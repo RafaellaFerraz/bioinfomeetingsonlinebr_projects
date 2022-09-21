@@ -66,7 +66,7 @@ Ir no terminal e baixar via wget:
 
     3 - PacBio
 
-3. **Análise pelo assembly-stats**
+4. **Análise pelo assembly-stats**
     1. **Converter fastq para fasta**
         
         Baixar ferramenta que converte
@@ -89,3 +89,11 @@ Ir no terminal e baixar via wget:
         ```
         assembly_stats SRR2154343_1.fa > SRR2154343_assembly_stats.txt
         ```
+
+4. **Filtro de qualidade**
+
+Filtro de qualidade utilizando fastp
+
+```
+fastp -i SRR2154343_1.fastq -o SRR2154343_out.fastq -h html_report.html -j json_report.json -q 5 -w 10 --dedup --overrepresentation_analysis
+```
